@@ -2,7 +2,7 @@ let randomNumber = Math.floor(Math.random() * 100) + 1;
 let attempts = 0;
 
 function checkGuess() {
-    let guess = document.getElementById("guessInput").value;
+    let guess = Number(document.getElementById("guessInput").value);
     let message = document.getElementById("message");
 
     if (guess < 1  guess > 100  isNaN(guess)) {
@@ -11,7 +11,7 @@ function checkGuess() {
     }
 
     attempts++;
-    
+
     if (guess < randomNumber) {
         message.innerText = "Too low! Try again.";
     } else if (guess > randomNumber) {
